@@ -1,0 +1,9 @@
+[theme]
+base="light"
+textColor="#262730"
+backgroundColor="#ffffff"
+
+[theme.sidebar]
+textColor="#333333"
+backgroundColor="#e6f7ff"
+showWidgetBorder=true

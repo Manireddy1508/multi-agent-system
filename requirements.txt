@@ -1,0 +1,35 @@
+# # FastAPI y servidor
+# fastapi==0.104.1
+# uvicorn[standard]==0.24.0
+
+# # Validación de datos
+pydantic
+pydantic-settings
+
+# # OpenAI
+# #openai==1.3.7
+
+# # Firebase
+firebase-admin
+google-cloud-firestore
+
+# # Utilidades
+# python-multipart==0.0.6
+# python-jose[cryptography]==3.3.0
+# python-dotenv==1.0.0
+
+# # Desarrollo (opcional)
+# pytest==7.4.3
+# pytest-asyncio==0.21.1
+# httpx==0.25.2
+
+
+#Vector DB Dependancies
+langchain-openai
+langchain-community
+pymilvus
+pymupdf
+Pillow
+opencv-python
+google-cloud-storage
+streamlit

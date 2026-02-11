@@ -1,0 +1,9 @@
+.vscode
+__pycache__
+.env
+venv
+sample_asset
+vectoraisearch-bf00943afae6.json
+key.json
+requirements_2.txt
+test.ipynb
