@@ -1,3 +1,3 @@
 """
-Configuración del proyecto Jarvis.
+Configuración del proyecto multi-agent-system.
 """

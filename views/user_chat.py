@@ -43,7 +43,7 @@ if user_query and user_query.text and (not user_query["files"]):
     st.session_state.messages.append({"role": "user", "content": user_query.text})
 
     # Loading prompt
-    prompt = "system:" + load_json("./agent_prompts/ecommerce.json")["prompt"]
+    prompt = "system:" + load_json("./agent_prompts/commerce_growth.json")["prompt"]
 
     # Append user query to the prompt along with chat history
     prompt += "\n ".join([f"{message['role']}: {message['content']}" for message in st.session_state.messages])
@@ -73,7 +73,7 @@ if user_query and user_query.text and (not user_query["files"]):
     # Save chat history to Firestore
     firestoreService.save_chat_history(
         user_id = "user_id_placeholder",  # Replace with actual user ID
-        agent_id = "ecommerce",  # Replace with actual agent ID
+        agent_id = "commerce_growth",  # Replace with actual agent ID
         chat_id = st.session_state.chat_id,
         messages = [
             ChatMessage(

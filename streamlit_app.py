@@ -6,7 +6,7 @@ import json
 
 # Set the page title and icon
 st.set_page_config(
-    page_title="Jarvis",  # Set the tab name here
+    page_title="multi-agent-system",  # Set the tab name here
     page_icon=":sparkles:",  # Optional: Add an icon emoji
     layout="wide",
     initial_sidebar_state="expanded"

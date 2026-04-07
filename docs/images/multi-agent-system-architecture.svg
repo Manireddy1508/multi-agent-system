@@ -1,0 +1,137 @@
+<svg width="1600" height="980" viewBox="0 0 1600 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="980" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#EEF4FF"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
+    </marker>
+    <style>
+      .title { font: 700 34px Arial, sans-serif; fill: #0F172A; }
+      .subtitle { font: 400 18px Arial, sans-serif; fill: #334155; }
+      .section { font: 700 20px Arial, sans-serif; fill: #0F172A; }
+      .label { font: 700 16px Arial, sans-serif; fill: #0F172A; }
+      .meta { font: 400 14px Arial, sans-serif; fill: #475569; }
+      .tag { font: 700 13px Arial, sans-serif; fill: #1D4ED8; }
+      .link { stroke: #2563EB; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .box { fill: url(#panel); stroke: #CBD5E1; stroke-width: 2; rx: 18; filter: url(#shadow); }
+      .blue { fill: #DBEAFE; stroke: #93C5FD; }
+      .green { fill: #DCFCE7; stroke: #86EFAC; }
+      .amber { fill: #FEF3C7; stroke: #FCD34D; }
+      .rose { fill: #FFE4E6; stroke: #FDA4AF; }
+      .slate { fill: #E2E8F0; stroke: #CBD5E1; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="980" fill="url(#bg)"/>
+
+  <text x="80" y="72" class="title">multi-agent-system Architecture</text>
+  <text x="80" y="104" class="subtitle">Streamlit control plane for prompt-managed assistants, document ingestion, vector storage, and Firestore-backed chat persistence.</text>
+
+  <rect x="60" y="150" width="1480" height="760" rx="28" fill="#FFFFFF" stroke="#D7E3F4" stroke-width="2"/>
+
+  <text x="110" y="198" class="section">User Interface</text>
+  <rect x="100" y="220" width="260" height="110" class="box blue"/>
+  <text x="130" y="255" class="label">Streamlit Navigation</text>
+  <text x="130" y="281" class="meta">streamlit_app.py</text>
+  <text x="130" y="307" class="meta">Routes to the three operator pages</text>
+
+  <rect x="100" y="370" width="260" height="120" class="box blue"/>
+  <text x="130" y="405" class="label">Add Context</text>
+  <text x="130" y="431" class="meta">views/add_context.py</text>
+  <text x="130" y="457" class="meta">Upload PDF or TXT knowledge sources</text>
+
+  <rect x="100" y="530" width="260" height="120" class="box blue"/>
+  <text x="130" y="565" class="label">Update Agent Configuration</text>
+  <text x="130" y="591" class="meta">views/update_agent_configuration.py</text>
+  <text x="130" y="617" class="meta">Edit prompt JSON files in place</text>
+
+  <rect x="100" y="690" width="260" height="120" class="box blue"/>
+  <text x="130" y="725" class="label">User Chat</text>
+  <text x="130" y="751" class="meta">views/user_chat.py</text>
+  <text x="130" y="777" class="meta">Collects messages and renders responses</text>
+
+  <text x="470" y="198" class="section">Processing Layer</text>
+  <rect x="430" y="220" width="300" height="110" class="box slate"/>
+  <text x="460" y="255" class="label">Temporary File Writer</text>
+  <text x="460" y="281" class="meta">utils.create_temp_file</text>
+  <text x="460" y="307" class="meta">Persists uploaded content for loaders</text>
+
+  <rect x="430" y="370" width="300" height="130" class="box slate"/>
+  <text x="460" y="405" class="label">Document Loaders</text>
+  <text x="460" y="431" class="meta">PyMuPDFLoader for PDF</text>
+  <text x="460" y="457" class="meta">TextLoader for TXT</text>
+  <text x="460" y="483" class="meta">Image extraction via LLMImageBlobParser</text>
+
+  <rect x="430" y="540" width="300" height="120" class="box slate"/>
+  <text x="460" y="575" class="label">Chunking + Metadata</text>
+  <text x="460" y="601" class="meta">RecursiveCharacterTextSplitter</text>
+  <text x="460" y="627" class="meta">chunk_size=1000, overlap=300</text>
+
+  <rect x="430" y="700" width="300" height="110" class="box slate"/>
+  <text x="460" y="735" class="label">Prompt Loader</text>
+  <text x="460" y="761" class="meta">agent_prompts/*.json</text>
+  <text x="460" y="787" class="meta">Current chat flow uses commerce_growth.json</text>
+
+  <text x="840" y="198" class="section">AI + Data Services</text>
+  <rect x="800" y="220" width="330" height="120" class="box green"/>
+  <text x="830" y="255" class="label">OpenAI Models</text>
+  <text x="830" y="281" class="meta">ChatOpenAI: gpt-4.1-nano</text>
+  <text x="830" y="307" class="meta">Embeddings: text-embedding-ada-002</text>
+
+  <rect x="800" y="390" width="330" height="120" class="box green"/>
+  <text x="830" y="425" class="label">Zilliz Cloud / Milvus</text>
+  <text x="830" y="451" class="meta">Vector collections mapped by AGENTS_COLLECTION</text>
+  <text x="830" y="477" class="meta">Stores embedded document chunks</text>
+
+  <rect x="800" y="560" width="330" height="120" class="box green"/>
+  <text x="830" y="595" class="label">FirestoreService</text>
+  <text x="830" y="621" class="meta">storage/firestore.py</text>
+  <text x="830" y="647" class="meta">Persists and retrieves chat sessions</text>
+
+  <rect x="800" y="730" width="330" height="100" class="box green"/>
+  <text x="830" y="765" class="label">Google Firestore</text>
+  <text x="830" y="791" class="meta">Firebase Admin SDK backed document store</text>
+
+  <text x="1240" y="198" class="section">Configuration</text>
+  <rect x="1200" y="220" width="260" height="120" class="box amber"/>
+  <text x="1230" y="255" class="label">.env.sample</text>
+  <text x="1230" y="281" class="meta">OpenAI, Firebase, Zilliz, GCS</text>
+  <text x="1230" y="307" class="meta">and AGENTS_COLLECTION mappings</text>
+
+  <rect x="1200" y="390" width="260" height="120" class="box amber"/>
+  <text x="1230" y="425" class="label">config/settings.py</text>
+  <text x="1230" y="451" class="meta">Pydantic settings loader</text>
+  <text x="1230" y="477" class="meta">Project and service configuration</text>
+
+  <rect x="1200" y="560" width="260" height="120" class="box rose"/>
+  <text x="1230" y="595" class="label">Declared Cloud Storage Path</text>
+  <text x="1230" y="621" class="meta">google-cloud-storage dependency</text>
+  <text x="1230" y="647" class="meta">and GCS env vars are present</text>
+
+  <path d="M360 275 H430" class="link"/>
+  <path d="M360 430 H430" class="link"/>
+  <path d="M360 590 H430" class="link"/>
+  <path d="M360 750 H430" class="link"/>
+
+  <path d="M730 430 H800" class="link"/>
+  <path d="M730 600 H800" class="link"/>
+  <path d="M730 750 H800" class="link"/>
+  <path d="M965 340 V390" class="link"/>
+  <path d="M965 680 V730" class="link"/>
+
+  <path d="M1130 280 H1200" class="link"/>
+  <path d="M1130 620 H1200" class="link"/>
+  <path d="M1330 340 V390" class="link"/>
+
+  <text x="470" y="850" class="tag">Operational note</text>
+  <text x="580" y="850" class="meta">The UI exposes image and video upload selectors, but the implemented ingestion path currently handles PDF and TXT documents.</text>
+</svg>
